@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+ xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:context="http://www.springframework.org/schema/context"
+ xmlns:p="http://www.springframework.org/schema/p"
+ xmlns:c="http://www.springframework.org/schema/c"
+ xsi:schemaLocation="http://www.springframework.org/schema/beans
+ http://www.springframework.org/schema/beans/spring-beans.xsd
+ http://www.springframework.org/schema/context
+ http://www.springframework.org/schema/context/spring-context.xsd">
+	
+ 	<!-- <bean class = "com.springcore.constructorInj.Certi" name="cert">
+ 		<constructor-arg value="jaiswal" />
+ 	</bean> -->
+	
+ 	<bean class = "com.springcore.constructorInj.Certi" name="cert" c:name="Anand" >
+ 		
+ 	</bean>
+ 	<bean class = "com.springcore.constructorInj.Person" name = "person">
+ 		<constructor-arg value="Prashant" />
+		<constructor-arg value="20" type="int" />
+		<constructor-arg ref="cert" />
+		<constructor-arg>
+				<list>
+					<value>Delhi</value>
+					<value>Pune</value>
+				</list>
+		</constructor-arg>
+	</bean>
+	
+	<bean class = "com.springcore.constructorInj.Addition" name="add" >
+		<!--<constructor-arg value ="20" type = "double"/>
+		<constructor-arg value = "30" type = "double"/> -->
+		<constructor-arg value ="20" type = "double" index="1"/>
+		<constructor-arg value = "30" type = "double" index="0"/>
+		
+		
+	</bean>
+	
+	
+    
+ 	
+ 	
+ </beans>
